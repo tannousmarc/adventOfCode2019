@@ -20,7 +20,7 @@ fs.readFile('201902.txt', 'utf8', (err, data) => {
             }
             if(data[0] === 19690720){
                 console.log(100 * data[1] + data[2]);
-                break;
+                return;
             }
         }
     }
