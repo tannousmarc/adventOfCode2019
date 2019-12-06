@@ -23,13 +23,12 @@ fs.readFile('201906.txt', 'utf8', (err, data) => {
     const dfs = (source, neighbours, depth) => {
         visited.add(source);
         if(neighbours.get(source).length > 0){
-            let oldDepth = depth;
             for(dest of neighbours.get(source)){
                 if(dest === 'SAN')
-                    console.log(oldDepth - 1);
+                    console.log(depth - 1);
                 if(!visited.has(dest)){
-                    res += oldDepth + 1;
-                    dfs(dest, neighbours, oldDepth + 1);
+                    res += depth + 1;
+                    dfs(dest, neighbours, depth + 1);
                 }
             }
         }
